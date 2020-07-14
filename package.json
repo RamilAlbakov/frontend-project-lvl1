@@ -1,9 +1,10 @@
 {
-  "name": "frontend-project-lvl1",
+  "name": "BrainGames",
   "version": "1.0.0",
   "description": "Hexlet brain games",
   "bin": {
-    "brain-games": "bin/brain-games.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js"
   },
   "type": "module",
   "main": "index.js",
