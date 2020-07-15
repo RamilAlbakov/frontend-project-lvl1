@@ -1,7 +1,6 @@
 #!/usr/bin/node
 
-import { evenGame, greeting } from '../src/even.js';
+import evenGame from '../games/even.js';
+import playGame from '../src/index.js';
 
-console.log('Welcome to the Brain Games!');
-const name = greeting();
-evenGame(name);
+playGame(evenGame);

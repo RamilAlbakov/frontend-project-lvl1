@@ -1,25 +1,22 @@
 import readlineSync from 'readline-sync';
 
-const greeting = () => {
+const playGame = (gameFunc) => {
+  console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  return name;
-};
 
-const evenGame = (name) => {
-  const rule = 'Answer "yes" if the number is even, otherwise answer "no"';
-  console.log(rule);
+  const maxNumber = 100;
+  const [gameRules, gameQuestionAndAnswer] = gameFunc(maxNumber);
+  console.log(gameRules);
 
-  const maxNumber = 1000;
   const rounds = 3;
   let rightAnswersCount = 0;
 
   while (rightAnswersCount < rounds) {
-    const num = Math.floor(Math.random() * maxNumber);
-    const rightAnswer = num % 2 === 0 ? 'yes' : 'no';
-    console.log(`Question: ${num}`);
-
+    const [question, rightAnswer] = gameQuestionAndAnswer();
+    console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
+
     if (answer === rightAnswer) {
       console.log('Correct!');
       rightAnswersCount += 1;
@@ -34,4 +31,4 @@ const evenGame = (name) => {
   }
 };
 
-export { evenGame, greeting };
+export default playGame;
