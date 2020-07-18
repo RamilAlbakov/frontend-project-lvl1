@@ -5,8 +5,7 @@ const playGame = (gameFunc) => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
 
-  const maxNumber = 100;
-  const [gameRules, gameQuestionAndAnswer] = gameFunc(maxNumber);
+  const [gameRules, gameQuestionAndAnswer] = gameFunc();
   console.log(gameRules);
 
   const rounds = 3;
@@ -20,14 +19,15 @@ const playGame = (gameFunc) => {
     if (answer === rightAnswer) {
       console.log('Correct!');
       rightAnswersCount += 1;
-      if (rightAnswersCount === rounds) {
-        console.log(`Congratulations, ${name}!`);
-      }
     } else {
       console.log(`"${answer}" is wrong answer ;(. Correct answer was "${rightAnswer}"`);
       console.log(`Let's try again, ${name}!`);
       break;
     }
+  }
+
+  if (rightAnswersCount === rounds) {
+    console.log(`Congratulations, ${name}!`);
   }
 };
 

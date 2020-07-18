@@ -1,7 +1,10 @@
-const evenGame = (maxNumber) => {
+import { generateNumber } from '../utils.js';
+
+const evenGame = () => {
   const rule = 'Answer "yes" if the number is even, otherwise answer "no"';
   const questionAndAnswer = () => {
-    const question = Math.floor(Math.random() * maxNumber);
+    const maxNumber = 1000;
+    const question = generateNumber(maxNumber);
     const answer = question % 2 === 0 ? 'yes' : 'no';
     return [question, answer];
   };
