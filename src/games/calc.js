@@ -5,10 +5,29 @@ const rule = 'What is the result of the expression?';
 
 const getOperation = () => {
   const operations = ['+', '*', '-'];
-  const operationsNum = operations.length;
-  const operationIndex = generateNumber(operationsNum);
+  const operationIndex = generateNumber(operations.length);
 
   return operations[operationIndex];
+};
+
+const calcNumbers = (operation, firstNumber, secondNumber) => {
+  let result;
+
+  switch (operation) {
+    case '+':
+      result = firstNumber + secondNumber;
+      break;
+    case '*':
+      result = firstNumber * secondNumber;
+      break;
+    case '-':
+      result = firstNumber - secondNumber;
+      break;
+    default:
+      break;
+  }
+
+  return result;
 };
 
 const questionAndAnswer = () => {
@@ -16,26 +35,9 @@ const questionAndAnswer = () => {
   const firstNum = generateNumber(maxNumber);
   const secondNum = generateNumber(maxNumber);
 
-  let question;
-  let answer;
   const operation = getOperation();
-
-  switch (operation) {
-    case '+':
-      answer = firstNum + secondNum;
-      question = `${firstNum} + ${secondNum}`;
-      break;
-    case '*':
-      answer = firstNum * secondNum;
-      question = `${firstNum} * ${secondNum}`;
-      break;
-    case '-':
-      answer = firstNum - secondNum;
-      question = `${firstNum} - ${secondNum}`;
-      break;
-    default:
-      break;
-  }
+  const question = `${firstNum} ${operation} ${secondNum}`;
+  const answer = calcNumbers(operation, firstNum, secondNum);
 
   return [question, String(answer)];
 };

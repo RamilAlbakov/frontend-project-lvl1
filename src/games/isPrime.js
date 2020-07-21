@@ -4,13 +4,12 @@ import playGame from '../index.js';
 const rule = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
 const isPrime = (num) => {
-  if (num % 2 === 0) return false;
-
-  for (let i = 3; i <= num / 2; i += 2) {
+  for (let i = 2; i <= Math.sqrt(num);) {
     if (num % i === 0) return false;
+    i += i === 2 ? 1 : 2;
   }
 
-  return true;
+  return num > 1;
 };
 
 const questionAndAnswer = () => {

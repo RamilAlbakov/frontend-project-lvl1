@@ -19,12 +19,11 @@ const playGame = (gameRules, gameQuestionAndAnswer) => {
     } else {
       console.log(`"${answer}" is wrong answer ;(. Correct answer was "${rightAnswer}"`);
       console.log(`Let's try again, ${name}!`);
-      return null;
+      return;
     }
   }
 
   console.log(`Congratulations, ${name}!`);
-  return null;
 };
 
 export default playGame;
