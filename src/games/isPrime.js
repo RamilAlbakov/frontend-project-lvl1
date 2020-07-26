@@ -4,15 +4,18 @@ import playGame from '../index.js';
 const rule = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
 const isPrime = (num) => {
-  for (let i = 2; i <= Math.sqrt(num);) {
-    if (num % i === 0) return false;
-    i += i === 2 ? 1 : 2;
+  if (num <= 1) {
+    return false;
   }
 
-  return num > 1;
+  for (let i = 2; i <= Math.sqrt(num); i += 1) {
+    if (num % i === 0) return false;
+  }
+
+  return true;
 };
 
-const questionAndAnswer = () => {
+const getQuestionAndAnswer = () => {
   const maxNumber = 100;
   const question = generateNumber(maxNumber);
   const answer = isPrime(question) ? 'yes' : 'no';
@@ -20,8 +23,8 @@ const questionAndAnswer = () => {
   return [question, answer];
 };
 
-const isPrimeGame = () => {
-  playGame(rule, questionAndAnswer);
+const playPrimeGame = () => {
+  playGame(rule, getQuestionAndAnswer);
 };
 
-export default isPrimeGame;
+export default playPrimeGame;

@@ -13,7 +13,7 @@ const generateProgression = (startElem, length, step) => {
   return progression;
 };
 
-const questionAndAnswer = () => {
+const getQuestionAndAnswer = () => {
   const maxNumber = 100;
   const progressionLength = 10;
   const maxProgressionStep = 10;
@@ -31,8 +31,8 @@ const questionAndAnswer = () => {
   return [question, answer];
 };
 
-const progressionGame = () => {
-  playGame(rule, questionAndAnswer);
+const playProgressionGame = () => {
+  playGame(rule, getQuestionAndAnswer);
 };
 
-export default progressionGame;
+export default playProgressionGame;

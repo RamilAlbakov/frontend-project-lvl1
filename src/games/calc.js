@@ -24,13 +24,14 @@ const calcNumbers = (operation, firstNumber, secondNumber) => {
       result = firstNumber - secondNumber;
       break;
     default:
+      result = firstNumber + secondNumber;
       break;
   }
 
   return result;
 };
 
-const questionAndAnswer = () => {
+const getQuestionAndAnswer = () => {
   const maxNumber = 20;
   const firstNum = generateNumber(maxNumber);
   const secondNum = generateNumber(maxNumber);
@@ -42,8 +43,8 @@ const questionAndAnswer = () => {
   return [question, String(answer)];
 };
 
-const calcGame = () => {
-  playGame(rule, questionAndAnswer);
+const playCalcGame = () => {
+  playGame(rule, getQuestionAndAnswer);
 };
 
-export default calcGame;
+export default playCalcGame;

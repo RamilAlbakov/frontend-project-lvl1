@@ -3,26 +3,26 @@ import playGame from '../index.js';
 
 const rule = 'Find the greatest common divisor of given numbers';
 
-const gcd = (a, b) => {
+const getGcd = (a, b) => {
   if (b === 0) {
     return a;
   }
-  return gcd(b, a % b);
+  return getGcd(b, a % b);
 };
 
-const questionAndAnswer = () => {
+const getQuestionAndAnswer = () => {
   const maxNumber = 20;
   const firstNum = generateNumber(maxNumber);
   const secondNum = generateNumber(maxNumber);
 
   const question = `${firstNum} ${secondNum}`;
-  const answer = String(gcd(firstNum, secondNum));
+  const answer = String(getGcd(firstNum, secondNum));
 
   return [question, answer];
 };
 
-const gcdGame = () => {
-  playGame(rule, questionAndAnswer);
+const playGcdGame = () => {
+  playGame(rule, getQuestionAndAnswer);
 };
 
-export default gcdGame;
+export default playGcdGame;
