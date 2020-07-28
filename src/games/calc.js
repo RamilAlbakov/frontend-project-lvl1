@@ -11,28 +11,21 @@ const getOperation = () => {
 };
 
 const calcNumbers = (operation, firstNumber, secondNumber) => {
-  let result;
-
   switch (operation) {
     case '+':
-      result = firstNumber + secondNumber;
-      break;
+      return firstNumber + secondNumber;
     case '*':
-      result = firstNumber * secondNumber;
-      break;
+      return firstNumber * secondNumber;
     case '-':
-      result = firstNumber - secondNumber;
-      break;
+      return firstNumber - secondNumber;
     default:
-      result = firstNumber + secondNumber;
-      break;
+      return firstNumber + secondNumber;
   }
-
-  return result;
 };
 
+const maxNumber = 20;
+
 const getQuestionAndAnswer = () => {
-  const maxNumber = 20;
   const firstNum = generateNumber(maxNumber);
   const secondNum = generateNumber(maxNumber);
 

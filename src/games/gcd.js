@@ -10,8 +10,9 @@ const getGcd = (a, b) => {
   return getGcd(b, a % b);
 };
 
+const maxNumber = 20;
+
 const getQuestionAndAnswer = () => {
-  const maxNumber = 20;
   const firstNum = generateNumber(maxNumber);
   const secondNum = generateNumber(maxNumber);
 

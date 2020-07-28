@@ -13,8 +13,9 @@ const generateProgression = (startElem, length, step) => {
   return progression;
 };
 
+const maxNumber = 100;
+
 const getQuestionAndAnswer = () => {
-  const maxNumber = 100;
   const progressionLength = 10;
   const maxProgressionStep = 10;
 

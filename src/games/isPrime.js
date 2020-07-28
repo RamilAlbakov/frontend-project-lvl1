@@ -15,8 +15,9 @@ const isPrime = (num) => {
   return true;
 };
 
+const maxNumber = 100;
+
 const getQuestionAndAnswer = () => {
-  const maxNumber = 100;
   const question = generateNumber(maxNumber);
   const answer = isPrime(question) ? 'yes' : 'no';
 
