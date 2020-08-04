@@ -19,7 +19,7 @@ const calcNumbers = (operation, firstNumber, secondNumber) => {
     case '-':
       return firstNumber - secondNumber;
     default:
-      return firstNumber + secondNumber;
+      throw new Error('incorrect operation');
   }
 };
 
