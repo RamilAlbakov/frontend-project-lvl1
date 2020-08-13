@@ -13,8 +13,8 @@ const getGcd = (a, b) => {
 const maxNumber = 20;
 
 const getQuestionAndAnswer = () => {
-  const firstNum = generateNumber(maxNumber);
-  const secondNum = generateNumber(maxNumber);
+  const firstNum = generateNumber(0, maxNumber);
+  const secondNum = generateNumber(0, maxNumber);
 
   const question = `${firstNum} ${secondNum}`;
   const answer = String(getGcd(firstNum, secondNum));

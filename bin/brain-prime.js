@@ -1,5 +1,5 @@
 #!/usr/bin/node
 
-import playPrimeGame from '../src/games/isPrime.js';
+import playPrimeGame from '../src/games/prime.js';
 
 playPrimeGame();

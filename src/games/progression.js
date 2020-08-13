@@ -19,12 +19,12 @@ const getQuestionAndAnswer = () => {
   const progressionLength = 10;
   const maxProgressionStep = 10;
 
-  const firstNum = generateNumber(maxNumber);
-  const minStep = 1;
-  const progressionStep = generateNumber(maxProgressionStep, minStep);
+  const firstNum = generateNumber(0, maxNumber);
+  const minProgressionStep = 1;
+  const progressionStep = generateNumber(minProgressionStep, maxProgressionStep);
   const progression = generateProgression(firstNum, progressionLength, progressionStep);
 
-  const indexOfAnswer = generateNumber(progressionLength);
+  const indexOfAnswer = generateNumber(0, progressionLength - 1);
   const answer = String(progression[indexOfAnswer]);
   progression[indexOfAnswer] = '..';
   const question = progression.join(' ');

@@ -8,7 +8,7 @@ const isEven = (number) => number % 2 === 0;
 const maxNumber = 1000;
 
 const getQuestionAndAnswer = () => {
-  const question = generateNumber(maxNumber);
+  const question = generateNumber(0, maxNumber);
   const answer = isEven(question) ? 'yes' : 'no';
 
   return [question, answer];
